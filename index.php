@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     'id' => $_POST['id'],
   ]);
 
-  setcookie('message', $response, time() + 10);
+  setcookie('message', $response, time() + 5);
 
   header("Location: index.php");
 }
@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
 if(isset($_POST['delete'])) {
   $response= Student::delete($_POST['id']);
 
-  setcookie('message', $response, time() + 10);
+  setcookie('message', $response, time() + 5);
   
   header("Location: index.php");
 }
@@ -49,11 +49,11 @@ if(isset($_POST['delete'])) {
             <form action="" method="POST">
               <div class="mb-3">
                 <label class="text-white font-semibold" for="nama">Nama</label>
-                <input class="rounded-xl p-1.5 block w-full border-1 transition duration-300 ease-in-out border-gray-300 focus:outline-none focus:border-teal-500 focus:ring focus:ring-emerald-200 glowing-border" type="text" id="nama" name="name" placeholder="Enter Name" />
+                <input class="rounded-xl p-1.5 block w-full border-1 transition duration-300 ease-in-out border-gray-300 focus:outline-none focus:border-teal-500 focus:ring focus:ring-emerald-200 glowing-border" type="text" id="nama" name="name" placeholder="Enter Name" required />
               </div>
               <div class="mb-3">
                 <label class="text-white font-semibold" for="nis">NIS</label>
-                <input class="rounded-xl p-1.5 block w-full border-1 transition duration-300 ease-in-out border-gray-300 focus:outline-none focus:border-teal-500 focus:ring focus:ring-emerald-200 glowing-border" type="number" id="nis"name="nis" placeholder="Enter NIS" />
+                <input class="rounded-xl p-1.5 block w-full border-1 transition duration-300 ease-in-out border-gray-300 focus:outline-none focus:border-teal-500 focus:ring focus:ring-emerald-200 glowing-border" type="number" id="nis"name="nis" placeholder="Enter NIS" required />
               </div>
               
               <div class="grid gap-2">
